@@ -1,4 +1,37 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Schedule from './pages/Schedule';
+import Sidebar from './components/Sidebar';
+import './App.css';
+
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/schedule" element={<Schedule />} />
+            </Routes>
+        </Router>
+    );
+}
+
+// <Route path="/schedule" element={<Schedule />} />
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
@@ -36,3 +69,4 @@ export default function App () {
         </div>
     );
 }
+*/
