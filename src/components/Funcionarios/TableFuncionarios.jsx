@@ -35,6 +35,6 @@ export function TableFuncionarios() {
       defaultColDef={defaultColDef}
       rowSelection='multiple'
       animateRows={true}
-        />
+      />
   );
 }

@@ -1,0 +1,32 @@
+.close_button {
+    background-color: red;
+    height: 30px;
+    width: 100px;
+    margin-right: 75px;
+}
+
+.save_button {
+    background-color: #00e337;
+    height: 30px;
+    width: 100px;
+    margin-right: 25px;
+}
+.modal_header {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    background-color: #066699;
+    color: #f8f8ec;
+}
+.modal_body {
+    height: 500px;
+    width: 100%;
+}
+.modal_footer {
+    margin-top: 35px;
+    display: flex;
+    float: right;
+}
