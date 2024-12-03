@@ -3,7 +3,7 @@ import { IoMdPersonAdd } from "react-icons/io"; // icone de add pessoa
 import Modal from "react-modal";
 import "./Funcionarios.css";
 
-export function Header ({}){
+export function AddBotao ({}){
     const [visible,setVisible] = useState(false);
 
     return (
