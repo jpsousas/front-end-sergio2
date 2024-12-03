@@ -3,7 +3,7 @@ import { IoMdPersonAdd } from "react-icons/io"; // icone de add pessoa
 import Modal from "react-modal";
 import "./Funcionarios.css";
 
-export function Header ({}){
+export function funcionariosHeader ({}){
     const [visible,setVisible] = useState(false);
 
     return (
@@ -38,7 +38,7 @@ export function Header ({}){
                         </select>
                         <input style={{display: 'none'}} type='text' placeholder='Digite o cargo'></input>
                         <h3>Qual a jornada de trabalho?</h3> 
-                        <select style={{width: ''}}>
+                        <select style={{width: '100px'}}>
                             <option value='20'>20h</option>
                             <option value='25'>25h</option>
                             <option value='30'>30h</option>
