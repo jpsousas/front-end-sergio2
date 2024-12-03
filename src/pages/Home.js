@@ -4,10 +4,14 @@ import { TableFuncionarios } from '../components/Funcionarios/TableFuncionarios.
 
 export default function Home () {
     return(
+    <div>
         <div>
-    <TableFuncionarios />
-    <Header/>
-    
+    <Header />
         </div>
+
+        <div className="ag-theme-quartz-dark"style={{height: 1000}}>
+            <TableFuncionarios />
+        </div>
+    </div>
     );
 }
