@@ -17,7 +17,7 @@ class Horario(models.Model):
        hora_fim = models.CharField(max_length=5)
        
        class Meta:
-                ordering = ['dia_sem']
+                ordering = ['id']
 
                 def __str__(self):
                     return {self.dia_sem}, {self.hora_inicio}, {self.hora_fim}
