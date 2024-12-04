@@ -4,8 +4,9 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import {HeaderFuncionarios} from './components/Funcionarios/Header.jsx';
 import {HeaderHorarios} from './components/Horarios/Header.jsx';
-import { TableFuncionarios } from './components/Funcionarios/TableFuncionarios.jsx';
-import { useState } from 'react';
+import {TableFuncionarios} from './components/Funcionarios/TableFuncionarios.jsx';
+import {TableHorarios} from './components/Horarios/TableHorarios.jsx';
+import {useState} from 'react';
 
 
 export default function App () {
@@ -19,6 +20,10 @@ export default function App () {
         <div className="ag-theme-quartz-dark"style={{height: 1000}}>
             <HeaderFuncionarios />
             <TableFuncionarios />
+        <div>
+            <HeaderHorarios/>
+            <TableHorarios />
         </div>
+        
     );
 }
