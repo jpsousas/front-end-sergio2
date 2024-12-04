@@ -8,14 +8,14 @@ from .serializers import FuncionarioSerializer, HorarioSerializer, AlocacaoSeria
 class FuncionarioListAPIView(generics.ListAPIView):
     serializer_class = FuncionarioSerializer
     permission_classes = [permissions.AllowAny]
-    queryse = Funcionario.objects.all()
+    queryset = Funcionario.objects.all()
 
 class HorarioListAPIView(generics.ListAPIView):
     serializer_class = HorarioSerializer
     permission_classes = [permissions.AllowAny]
-    query = Horario.objects.all()
+    queryset = Horario.objects.all()
 
 class AlocacaoListAPIView(generics.ListAPIView):
     serializer_class = AlocacaoSerializer
     permission_classes = [permissions.AllowAny]
-    query = Alocacao.objects.all()
+    queryset = Alocacao.objects.all()

@@ -17,6 +17,7 @@ export default function App () {
 
     return (
         <div className="ag-theme-quartz-dark"style={{height: 1000}}>
+            <HeaderFuncionarios />
             <TableFuncionarios />
         </div>
     );
