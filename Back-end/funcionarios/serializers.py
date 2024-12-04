@@ -19,3 +19,4 @@ class AlocacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alocacao
         fields = ('id_func','id_horario')
+        
