@@ -3,16 +3,21 @@ import { IoMdPersonAdd } from "react-icons/io"; // icone de add pessoa
 import Modal from "react-modal";
 import "./Funcionarios.css";
 
-export function AddBotao ({}){
+export default function HeaderFuncionarios ({}){
     const [visible,setVisible] = useState(false);
 
     return (
-        <div id="nav-bar" className='header-gerenciamento' style={{backgroundColor: '#02416d',  paddingLeft: '25px'}}>
+        <div id="nav-bar" className='header-gerenciamento' style={{backgroundColor: '#02416d', paddingLeft: '25px'}}>
             <IoMdPersonAdd onClick={()=>setVisible(!visible)} style={{height: '32px', width: '32px', verticalAlign: '-5px'}}/>
             <div onClick={()=>setVisible(!visible)} id='box-add-func' style={{display: 'inline-block', paddingLeft: '25px'}}>
                 <h1 color='#f8f8ec'>Adicionar Funcionário</h1>
             </div>
-            <Modal isOpen={visible} onRequestClose={() => setVisible(!visible)}>
+            <Modal isOpen={visible} onRequestClose={() => setVisible(!visible)} 
+            style={{
+                overlay: {
+                    zIndex: 2000
+                }
+            }}>
                 <header className='modal_header'>
                     <IoMdPersonAdd  style={{height: '32px', width: '32px', verticalAlign: '-5px', marginRight: '20px'}}/>
                     <h1>Cadastre um novo funcionário!</h1>

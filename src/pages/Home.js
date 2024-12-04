@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import HeaderFuncionarios from '../components/Funcionarios/HeaderFuncionarios.jsx';
 import { TableFuncionarios } from '../components/Funcionarios/TableFuncionarios.jsx';
 
 export default function Home() {
@@ -19,6 +20,22 @@ export default function Home() {
                 }}
             >
                 <Header />
+            </div>
+
+            {/* Botão */}
+            <div
+                className="botao"
+                style={{
+                    top: 'relative',
+                    marginLeft: '250px',
+                    zIndex: 1000
+
+
+                }}>
+                <div>
+                    <HeaderFuncionarios />
+                </div>
+
             </div>
 
             {/* Tabela */}
