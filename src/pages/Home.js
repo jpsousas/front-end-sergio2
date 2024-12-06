@@ -29,8 +29,6 @@ export default function Home() {
                     top: 'relative',
                     marginLeft: '250px',
                     zIndex: 1000
-
-
                 }}>
                 <div>
                     <HeaderFuncionarios />
