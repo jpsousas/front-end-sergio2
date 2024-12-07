@@ -15,7 +15,6 @@ export function TableFuncionarios() {
       headerName: "Outras Ações",
       cellRenderer: (params) => (
         <div>
-          oiiii
           <button onClick={() => handleEdit(params.data.id, params.data.nome, params.data.cargo)} style={{marginRight: "20px"}}>✏️</button>
           <button onClick={() => handleDelete(params.data.id, params.data.nome, params.data.cargo)}>🗑️</button>
         </div>
