@@ -1,7 +1,4 @@
 import React from 'react';
-import { AgGridReact } from 'ag-grid-react';
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css";
 import {HeaderFuncionarios} from './components/Funcionarios/Header.jsx';
 import {HeaderHorarios} from './components/Horarios/Header.jsx';
 import {TableFuncionarios} from './components/Funcionarios/TableFuncionarios.jsx';
@@ -17,7 +14,7 @@ export default function App () {
     ]);
 
     return (
-        <div className="ag-theme-quartz-dark"style={{height: 1000}}>
+        <div style={{height: 1000}}>
             <HeaderFuncionarios />
             <TableFuncionarios />
         <div>
