@@ -20,6 +20,24 @@ export function TableFuncionarios() {
 //    .then(result => result.json())
 //    .then(rowData => setRowData(rowData))
 //  }, []);
+
+useEffect(() => {
+  fetch("http://127.0.0.1:8000/api/funcionarios/")
+    .then((response) => {
+      console.log("Status da resposta:", response.status);
+      console.log("Conteúdo bruto:", response);
+      return response.json(); // Certifique-se de que é JSON
+    })
+    .then((data) => {
+      console.log("Dados recebidos:", data);
+      setRowData(data);
+    })
+    .catch((error) => {
+      console.error("Erro na requisição:", error);
+    });
+}, []);
+
+
   return (
     <AgGridReact
       rowData={rowData}
