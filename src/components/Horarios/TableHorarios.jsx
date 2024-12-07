@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
-const TableHorarios = () => {
+export function TableHorarios () {
     const eventos = [
         { title: 'Evento 1', start: '2024-12-04', end: '2024-12-05' },
         { title: 'Evento 2', start: '2024-12-06', allDay: true },
@@ -25,5 +25,3 @@ const TableHorarios = () => {
         </div>
     );
 };
-
-export default TableHorarios;
