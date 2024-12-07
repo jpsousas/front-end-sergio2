@@ -25,5 +25,3 @@ export function TableHorarios () {
         </div>
     );
 };
-
-export default TableHorarios;
