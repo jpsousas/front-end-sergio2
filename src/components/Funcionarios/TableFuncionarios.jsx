@@ -10,15 +10,32 @@ export function TableFuncionarios() {
     { field: "id", headerName: "ID" },
     { field: "nome", headerName: "Nome" },
     { field: "cargo", headerName: "Cargo" },
-    { field: "other_actions", headerName: "Outras Ações"}
+    { 
+      field: "other_actions",
+      headerName: "Outras Ações",
+      cellRenderer: (params) => (
+        <div>
+          oiiii
+          <button onClick={() => handleEdit(params.data.id, params.data.nome, params.data.cargo)} style={{marginRight: "20px"}}>✏️</button>
+          <button onClick={() => handleDelete(params.data.id, params.data.nome, params.data.cargo)}>🗑️</button>
+        </div>
+      ),
+    },
   ], []);
   const defaultColDef = useMemo(()=> ({
     sortable: true,
     filter: true
   }), []);
 
+  const handleDelete = (id, nome, cargo) => {
+    console.log(`tentativa de DELETE de ${id} ${nome} ${cargo}`);
+  }
+  const handleEdit = (id, nome, cargo) => {
+    console.log(`tentativa de EDIT de ${id} ${nome} ${cargo}`);
+  }
+  //get de todos os funcionarios no banco
   useEffect(() => {
-    fetch("http://localhost:8000/api/funcionarios-list")
+    fetch("http://localhost:8000/api/funcionarios/")
       .then((response) => {
         console.log("Status da resposta:", response.status);
         console.log("Conteúdo bruto:", response);
