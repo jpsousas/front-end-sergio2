@@ -6,7 +6,7 @@ import {
   FaChartBar
 } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-import SidebarItem from '../SidebarItem'
+import SidebarItem from '../Sidebaritem'
 
 const Sidebar = ({ active }) => {
 
