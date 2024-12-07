@@ -31,6 +31,23 @@ class FuncionarioDeleteAPIView(APIView):
         except Funcionario.DoesNotExist:
             return Response({"error": "Funcionário não encontrado."}, status=status.HTTP_404_NOT_FOUND)
 
+class FuncionarioUpdateAPIView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    @csrf_exempt
+    def put(self, request, pk, *args, **kwargs):
+        try:
+            funcionario = Funcionario.objects.get(pk=pk)
+            serializer = FuncionarioSerializer(funcionario, data=request.data, partial=False)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"message": "Funcionário atualizado com sucesso."}, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Funcionario.DoesNotExist:
+            return Response({"error": "Funcionário não encontrado."}, status=status.HTTP_404_NOT_FOUND)
+
+
 # Listagem de Horários
 class HorarioListAPIView(generics.ListAPIView):
     serializer_class = HorarioSerializer
@@ -42,6 +59,22 @@ class HorarioCreateAPIView(generics.CreateAPIView):
     serializer_class = HorarioSerializer
     permission_classes = [permissions.AllowAny]
     queryset = Horario.objects.all()
+
+class HorarioUpdateAPIView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    @csrf_exempt
+    def put(self, request, pk, *args, **kwargs):
+        try:
+            horario = Horario.objects.get(pk=pk)
+            serializer = HorarioSerializer(horario, data=request.data, partial=False)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"message": "Horário atualizado com sucesso."}, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Horario.DoesNotExist:
+            return Response({"error": "Horário não encontrado."}, status=status.HTTP_404_NOT_FOUND)
 
 # Exclusão de Horários
 class HorarioDeleteAPIView(APIView):
@@ -76,5 +109,21 @@ class AlocacaoDeleteAPIView(APIView):
             alocacao = Alocacao.objects.get(pk=pk)
             alocacao.delete()
             return Response({"message": "Alocação deletada com sucesso."}, status=status.HTTP_204_NO_CONTENT)
+        except Alocacao.DoesNotExist:
+            return Response({"error": "Alocação não encontrada."}, status=status.HTTP_404_NOT_FOUND)
+
+class AlocacaoUpdateAPIView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    @csrf_exempt
+    def put(self, request, pk, *args, **kwargs):
+        try:
+            alocacao = Alocacao.objects.get(pk=pk)
+            serializer = AlocacaoSerializer(alocacao, data=request.data, partial=False)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"message": "Alocação atualizada com sucesso."}, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Alocacao.DoesNotExist:
             return Response({"error": "Alocação não encontrada."}, status=status.HTTP_404_NOT_FOUND)
