@@ -26,9 +26,9 @@ export default function HeaderFuncionarios ({}){
                     <form className='formulario-body'>
                         
                         <h3>Insira o nome do funcionario:</h3>
-                        <input type='text' placeholder='Ex: Ricardo Fajardo...' maxLength='100' minLength='20'></input>
+                        <input type='text' placeholder='Ex: Ricardo Fajardo...' maxLength='100' minLength='20' style={{height: '25px', width: '200px'}}></input>
                         <h3>Selecione o Cargo:</h3>
-                        <select name='cargos'>
+                        <select name='cargos' style={{height: '40px',width: '200px'}}>
                             <option value='1'>Desenvolvedor WEB Jr.</option>
                             <option value='2'>Estagiário</option>
                             <option value='3'>QA</option>
@@ -43,7 +43,7 @@ export default function HeaderFuncionarios ({}){
                         </select>
                         <input style={{display: 'none'}} type='text' placeholder='Digite o cargo'></input>
                         <h3>Qual a jornada de trabalho?</h3> 
-                        <select style={{width: ''}}>
+                        <select style={{height: '40px',width: '100px'}}>
                             <option value='20'>20h</option>
                             <option value='25'>25h</option>
                             <option value='30'>30h</option>

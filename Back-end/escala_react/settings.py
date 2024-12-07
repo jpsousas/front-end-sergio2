@@ -59,7 +59,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'escala_db',
         'USER': 'root',
-        'PASSWORD': 'ps3natal',
+        'PASSWORD': 'henrique2982003',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
