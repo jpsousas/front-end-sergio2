@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import { TableFuncionarios } from '../components/Funcionarios/TableFuncionarios.jsx';
+import { TableHorarios } from '../components/Horarios/TableHorarios.jsx';
 
 export default function Schedule() {
     return (
@@ -45,7 +45,7 @@ export default function Schedule() {
                 }}
             >
                 <div className="ag-theme-quartz-dark" style={{ height: 1000 }}>
-                    <TableFuncionarios />
+                    <TableHorarios />
                 </div>
             </div>
         </div>
