@@ -2,14 +2,14 @@
     background-color: red;
     height: 30px;
     width: 100px;
-    margin-right: 75px;
+    margin-right: 200px;
 }
 
 .save_button {
     background-color: #00e337;
     height: 30px;
     width: 100px;
-    margin-right: 25px;
+    margin-right: 200px;
 }
 .modal_header {
     align-items: center;
@@ -22,11 +22,10 @@
     color: #f8f8ec;
 }
 .modal_body {
-    height: 500px;
+    height: 200px;
     width: 100%;
 }
 .modal_footer {
-    margin-top: 35px;
-    display: flex;
+    margin-top: 30px;
     float: right;
 }

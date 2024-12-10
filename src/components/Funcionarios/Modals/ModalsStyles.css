@@ -1,0 +1,29 @@
+.close_button {
+    background-color: red;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.save_button {
+    background-color: #00e337;
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.close_button_delete {
+    background-color: red;
+    height: 30px;
+    width: 100px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.save_button_delete {
+    background-color: #00e337;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}

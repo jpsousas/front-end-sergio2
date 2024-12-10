@@ -7,7 +7,6 @@ export default function HeaderFuncionarios() {
     const [visible, setVisible] = useState(false);
     const [nomeFuncionario, setNomeFuncionario] = useState("");
     const [cargoFuncionario, setCargoFuncionario] = useState("Game DEV Jr.");
-    const [cargaHoraria, setCargaHoraria] = useState("40");
     const salvarFuncionario = () => {
         const payload = {
             nome: nomeFuncionario,
@@ -34,7 +33,6 @@ export default function HeaderFuncionarios() {
             setVisible(false);
             setNomeFuncionario("");
             setCargoFuncionario("Game DEV Jr.");
-            setCargaHoraria("40");
         })
         .catch(error => {
             console.error(error);
@@ -58,9 +56,11 @@ export default function HeaderFuncionarios() {
                         backgroundColor: 'rgba(0,0,0,0.3)'
                     },
                     content: {
+                        height: "50%",
                         maxWidth: '600px',
                         margin: 'auto',
-                        borderRadius: '10px'
+                        borderRadius: '10px',
+                        padding: '20px',
                     }
                 }}
             >
@@ -74,7 +74,7 @@ export default function HeaderFuncionarios() {
                         <h3>Insira o nome do funcionario:</h3>
                         <input 
                             type='text' 
-                            placeholder='Ex: Ricardo Fajardo...' 
+                            placeholder= 'Ex: Ricardo Fajardo...'  
                             maxLength='100' 
                             minLength='4' 
                             style={{height: '25px', width: '200px'}}
@@ -101,22 +101,9 @@ export default function HeaderFuncionarios() {
                             <option value='Desenvolvedor Mobile'>Desenvolvedor Mobile</option>
                             <option value='Analista de Suporte'>Analista de Suporte</option>
                         </select>
-                        
-                        <h3>Qual a jornada de trabalho?</h3> 
-                        <select 
-                            style={{height: '40px', width: '100px'}}
-                            value={cargaHoraria}
-                            onChange={(e) => setCargaHoraria(e.target.value)}
-                        >
-                            <option value='20'>20h</option>
-                            <option value='25'>25h</option>
-                            <option value='30'>30h</option>
-                            <option value='40'>40h</option>
-                            <option value='44'>44h</option>
-                        </select>
                     </form>
                 </div>
-                <footer className='modal_footer' style={{marginTop: '20px', display: 'flex', justifyContent: 'flex-end'}}>
+                <footer className='modal_footer' style={{display: 'flex', justifyContent: 'flex-end'}}>
                     <button className="close_button" onClick={() => setVisible(!visible)} 
                         style={{marginRight: '10px'}}
                     >
