@@ -41,9 +41,10 @@ export function TableFuncionarios() {
     console.log(`tentativa de EDIT de ${id} ${nome} ${cargo}`);
     setSelectedFuncionario({ id, nome, cargo });
     setIsEditModalOpen(true);
+    
   }
-  //get de todos os funcionarios no banco
-  useEffect(() => {
+
+  const getFuncionarios = () => {
     fetch("http://localhost:8000/api/funcionarios/")
       .then((response) => {
         console.log("Status da resposta:", response.status);
@@ -56,9 +57,14 @@ export function TableFuncionarios() {
       })
       .catch((error) => {
         console.error("Erro na requisição:", error);
-      });
-  }, []);
-  
+    });
+  };
+
+    useEffect(() => {
+      if (!isEditModalOpen || !isDeleteModalOpen) {
+        getFuncionarios();
+      }
+    }, [isEditModalOpen, isDeleteModalOpen]);
   
   return (
     <div style={{ height: "100%", width: "100%", marginTop: 0}}>
@@ -77,7 +83,7 @@ export function TableFuncionarios() {
         onRequestClose={() => setIsEditModalOpen(false)}
         onConfirm={() => {
           console.log("Confirmar edit do funcionario ",selectedFuncionario);
-          setIsEditModalOpen(false);
+          setIsDeleteModalOpen(false);
         }}
       />
       <AgGridReact

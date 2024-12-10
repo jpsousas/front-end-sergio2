@@ -7,13 +7,16 @@ export default function HeaderFuncionarios() {
     const [visible, setVisible] = useState(false);
     const [nomeFuncionario, setNomeFuncionario] = useState("");
     const [cargoFuncionario, setCargoFuncionario] = useState("Game DEV Jr.");
+
+    Modal.setAppElement('#root'); 
+
     const salvarFuncionario = () => {
         const payload = {
             nome: nomeFuncionario,
             cargo: cargoFuncionario
         };
 
-        fetch("http://localhost:8000/funcionarios/create/", { 
+        fetch("http://localhost:8000/api/funcionarios/create/", { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -33,6 +36,7 @@ export default function HeaderFuncionarios() {
             setVisible(false);
             setNomeFuncionario("");
             setCargoFuncionario("Game DEV Jr.");
+            window.location.reload(); 
         })
         .catch(error => {
             console.error(error);
