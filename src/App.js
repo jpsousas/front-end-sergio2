@@ -4,6 +4,7 @@ import "ag-grid-community/styles/ag-theme-quartz.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Schedule from './pages/Schedule';
+import "./App.css";
 
 
 export default function App () {
