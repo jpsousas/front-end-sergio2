@@ -1,0 +1,18 @@
+.horarios_save_button {
+    background-color: #00e337;
+    height: 30px;
+    width: 100px;
+}
+
+.horarios_close_button {
+    background-color: red;
+    height: 30px;
+    width: 100px;
+    margin-left: 10%;
+}
+
+.footer_add_modal {
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 45%;
+}
