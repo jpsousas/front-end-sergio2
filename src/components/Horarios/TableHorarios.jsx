@@ -9,7 +9,7 @@ import "./Horarios.css"
 
 export function TableHorarios() {
     const [eventos, setEventos] = useState([
-        { title: 'Henrique Araújo', start: '2024-12-04', end: '2024-12-05', duration: "02:00"},
+        { title: 'Henrique Araújo', start: '2024-12-04', end: '2024-12-05', duration: "02:00"   },
         { title: 'Mariana Oliveira', start: '2024-12-06', allDay: true },
         { title: 'Carlos Souza 08:00 - 17:00', start: '2024-12-12', duration: "02:00"}
     ]);
@@ -94,6 +94,7 @@ export function TableHorarios() {
         })
         .then(data => {
             console.log("Horario criado com sucesso: ", data);
+            closeModal();
             setIdFuncionario();
             setHorarioInicio();
             setHorarioFim();
@@ -136,36 +137,21 @@ export function TableHorarios() {
                         <h3 style={{color: "white"}}>⏲️ Adicionar Horário</h3>   
 
                         <h3 style={{color: "white",paddingLeft: "10%"}}>Data Selecionada: {selectedDate}</h3>
-
+                        <br/>
                     </div>
-                    
-                    <h4>Selecione o Funcionario:</h4>
+                    <div style={{ marginTop: "10px"}}>
+                        <h3 style={{paddingLeft: "39%"}} color='white'>{obterDiaDaSemana(selectedDate)}</h3>
+                    </div>
                     <form  onSubmit={(e)=>{e.preventDefault(); salvarHorario();}}>
-                        <select 
-                        id="funcionarios-select" 
-                        name="funcionario" 
-                        style={{height: '40px',width: '200px'}}
-                        onChange={(e) =>setIdFuncionario(e.target.value)}>
-                            <option 
-                            value="" 
-                            disabled 
-                            selected
-                            >--Selecione--</option>
-                            
-                                {funcionarios.map((funcionario) => (
-                                    <option key={funcionario.id} value={funcionario.id}>
-                                        {funcionario.nome} {/* Assuma que 'nome' é um campo retornado */}
-                                    </option>
-                                ))}
-                        </select>
-
+                        
                         <h4>Hora início:</h4>
                         <select 
                         id="Horário início" 
                         style={{height: '40px',width: '200px'}}
+                        value={"08:00"}
                         onChange={(e) => setHorarioInicio(e.target.value)}
                         >
-                            <option value="08:00">08:00</option>
+                            <option value="08:00" selected>08:00</option>
                             <option value="09:00">09:00</option>
                             <option value="10:00">10:00</option>
                             <option value="11:00">11:00</option>
@@ -179,6 +165,7 @@ export function TableHorarios() {
                         <select 
                         id="Horário início" 
                         style={{height: '40px',width: '200px'}}
+                        value={"16:00"}
                         onChange={(e) => setHorarioFim(e.target.value)}
                         >
                             <option value="08:00">08:00</option>
@@ -189,10 +176,10 @@ export function TableHorarios() {
                             <option value="13:00">13:00</option>
                             <option value="14:00">14:00</option>
                             <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
+                            <option value="16:00" >16:00</option>
                         </select>
                         <footer className='footer_add_modal'>
-                            <button className="horarios_save_button" onClick={salvarHorario}>Save</button>
+                            <button type='submit' className="horarios_save_button">Save</button>
                             <button className="horarios_close_button" onClick={closeModal}>Close</button>
                         </footer>
                     </form>
@@ -203,7 +190,7 @@ export function TableHorarios() {
             <Modal
                 isOpen={isEditModalOpen}
                 onRequestClose={() => setEditIsModalOpen(!isEditModalOpen)}
-                contentLabel="Editar Evento"
+                contentLabel="Editar Horario"
                 ariaHideApp={false}
                 style={{
                     overlay: {
@@ -211,7 +198,7 @@ export function TableHorarios() {
                       backgroundColor: 'rgba(0,0,0,0.3)',
                     },
                     content: {
-                      height: "55%",
+                      height: "62%",
                       maxWidth: '500px',
                       margin: 'auto',
                       borderRadius: '10px',
@@ -225,14 +212,6 @@ export function TableHorarios() {
                     <div style={{textAlign: "center", backgroundColor: "white"}}>
                         <h3>Editar Horário</h3>
                             <p>Data Selecionada: {selectedDate}</p>
-                            <select id="funcionarios-select" name="funcionario" style={{height: '40px',width: '200px'}}>
-                                <option value="" disabled selected>--Selecione--</option>
-                                {funcionarios.map((funcionario) => (
-                                    <option key={funcionario.id} value={funcionario.id}>
-                                        {funcionario.nome} {/* Assuma que 'nome' é um campo retornado */}
-                                    </option>
-                                ))}
-                            </select>
                             <p>Editar Hora início</p>
                             <select id="Horário início" style={{height: '40px',width: '200px'}}>
                                 <option>08:00</option>
@@ -262,6 +241,7 @@ export function TableHorarios() {
                         <button className="save_button" onClick={closeModal}>Save</button>
                         <button className="close_button" onClick={() => setEditIsModalOpen(!isEditModalOpen)}>Close</button>
                     </footer>
+                    <p style={{marginTop: "20px", color: "red"}}>**Ao editar, o horario editado se replicara para todos os outros funcionarios que anteriomente possuiam o mesmo horario</p>
             
             </Modal>
                 {/*FIM MODAL DE EDIT*/}
@@ -291,7 +271,7 @@ export function TableHorarios() {
                     </header>
 
                     <div style={{textAlign: "center", backgroundColor: "white", marginTop: "10%"}}>
-                        <h4>Ao excluir este horário, irá excluir de todos os outros dias</h4>
+                        <h4 style={{color: "red"}}>**Ao excluir este horário, todos os funcionario a ele ligados, ficarao sem horarios</h4>
                     </div>
 
                     <footer style={{paddingLeft: "25%", marginTop: "10%"}}>
