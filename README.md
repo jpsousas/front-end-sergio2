@@ -5,3 +5,11 @@ O intuito é aplicar conceitos de Bancos de Dados: Triggers; Functions; Procedur
 <h2>O projeto foi estruturado com base no seguindo modelo ER</h2>
 
 ![modelo er projeto](https://github.com/user-attachments/assets/a480977b-8ea0-4557-b39c-2009b5f2e48b)
+
+
+<h2>Imagens do projeto</h2>
+
+![imagem adicionar funcionario](https://github.com/user-attachments/assets/273e2795-1abc-47f2-a0a1-6af58f5cac52)
+
+![imagem adicionar horario](https://github.com/user-attachments/assets/a6868587-462c-49f6-97df-61c5886778a9)
+
